@@ -1,4 +1,6 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# Local Use
+_local
+*.local
 
 # Compiled output
 /dist
@@ -12,6 +14,7 @@ npm-debug.log
 yarn-error.log
 
 # IDEs and editors
+.nova/
 .idea/
 .project
 .classpath
