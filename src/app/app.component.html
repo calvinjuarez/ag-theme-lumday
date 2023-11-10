@@ -1,4 +1,5 @@
 <div class="button-bar">
+  <button (click)="updateColor()">Set Color to {{nextColor.name}}</button>
   <button (click)="clearSelection()">Clear Selection</button>
 </div>
 
@@ -12,4 +13,5 @@
   [animateRows]="true"
   (gridReady)="onGridReady($event)"
   (cellClicked)="onCellClicked($event)"
+  [style.--lum-custom-group-color]="color.value"
 ></ag-grid-angular>

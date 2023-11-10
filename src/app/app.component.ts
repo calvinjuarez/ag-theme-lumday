@@ -4,12 +4,20 @@ import { AgGridAngular } from 'ag-grid-angular';
 import { CellClickedEvent, ColDef, GridReadyEvent } from 'ag-grid-community';
 import { Observable } from 'rxjs';
 
+const Color = {
+  GREEN: { name: 'Green', value: '#acce55' },
+  BLUE: { name: 'Blue', value: '#5ad' },
+};
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  color = Color.GREEN;
+  nextColor = Color.BLUE;
+
   // Each Column Definition results in one Column.
   public columnDefs: ColDef[] = [
     { field: 'make'},
@@ -45,5 +53,16 @@ export class AppComponent {
   // Example using Grid's API
   clearSelection(): void {
     this.agGrid.api.deselectAll();
+  }
+
+  updateColor(): void {
+    if (this.color === Color.GREEN) {
+      this.color = Color.BLUE;
+      this.nextColor = Color.GREEN;
+    }
+    else {
+      this.color = Color.GREEN;
+      this.nextColor = Color.BLUE;
+    }
   }
 }

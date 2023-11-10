@@ -15,6 +15,7 @@
 
   // containers
   --ag-lumday-root-border-radius: var(--ag-grid-size);
+  --ag-lumday-root-left-border: solid var(--ag-grid-size);
 
   // grid
   --ag-grid-size: .4rem;
@@ -38,6 +39,14 @@
     // added to the Figma file to allow a designer to tweak things.
     border-radius: var(--ag-lumday-root-border-radius);
   }
+  .ag-root {
+    border-left: var(--ag-lumday-root-left-border);
+    // CSS custom properties make it pretty trivial to include values from
+    // outside the theme in the styles, making it super easy to set stuff with
+    // javascript.
+    border-left-color: var(--lum-custom-group-color, var(--ag-border-color));
+  }
+
   // grid
   .ag-header-row {
     font-weight: inherit;
