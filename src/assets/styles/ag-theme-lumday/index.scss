@@ -10,4 +10,31 @@
 
 
 .ag-theme-lumday {
+
+  // THEME VARIABLES
+
+  // grid
+  --ag-grid-size: .4rem;
+  --ag-borders: solid 1px; // restore
+  --ag-borders-critical: var(--ag-borders);
+    // text
+    --ag-font-size: 1rem;
+
+  // headers
+  --ag-header-height: var(--ag-row-height);
+  --ag-header-background-color: var(--ag-background-color);
+
+
+  // STYLES
+
+  // grid
+  .ag-header-row {
+    font-weight: inherit;
+  }
+  .ag-header-cell {
+    &:last-child::after {
+      content: none;
+    }
+  }
+
 }
