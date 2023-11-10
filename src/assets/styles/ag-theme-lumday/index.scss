@@ -13,6 +13,9 @@
 
   // THEME VARIABLES
 
+  // containers
+  --ag-lumday-root-border-radius: var(--ag-grid-size);
+
   // grid
   --ag-grid-size: .4rem;
   --ag-borders: solid 1px; // restore
@@ -23,15 +26,25 @@
   // headers
   --ag-header-height: var(--ag-row-height);
   --ag-header-background-color: var(--ag-background-color);
+    // text
+    --ag-lumday-header-font-size: calc(var(--ag-font-size) * 1.1);
 
 
   // STYLES
 
+  // containers
+  .ag-root-wrapper {
+    // It's easy to add custom theme-able vars in the CSS that could be
+    // added to the Figma file to allow a designer to tweak things.
+    border-radius: var(--ag-lumday-root-border-radius);
+  }
   // grid
   .ag-header-row {
     font-weight: inherit;
   }
   .ag-header-cell {
+    font-size: var(--ag-lumday-header-font-size);
+
     &:last-child::after {
       content: none;
     }
